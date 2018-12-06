@@ -1,0 +1,81 @@
+<html>
+<head>
+	<title>stock analysis</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">NEPAL STOCK MARKET ANALYSIS</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-8">
+			<div class="jumbotron">
+				<p class="lead" style="color:red;">Forecast Result</p>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>History</th>
+							<th>Forecast</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for k,v in total.items %}
+						<tr>
+							<td>{{k}}</td>
+							<td>{{v}}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+
+
+
+	<div class="row">
+	<center>	<p class="lead bg-primary" style="color:red;">Diagnostics</p></center>
+	<div class="col-md-2"></div>
+	<div class="jumbotron col-md-8">
+		<img src="{{second_plot}}">
+	</div>
+	<div class="col-md-2"></div>
+
+	</div>
+
+
+	<div class="row">
+	<center><p class="lead bg-primary" style="color:red;">Forecast Visualisation </p></center>
+	
+	<div class="jumbotron col-md-10">
+		<img src="{{first_plot}}" height="600" width="800">
+	</div>
+
+	</div>
+
+
+
+
+
+</div>
+
+
+</body>
+</html>
